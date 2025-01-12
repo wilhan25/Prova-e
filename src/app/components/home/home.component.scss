@@ -1,0 +1,68 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 800px;
+  }
+  
+  .home-header {
+    margin-bottom: 20px;
+  }
+  
+  .home-header h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+  }
+  
+  .home-main {
+    margin: 20px 0;
+  }
+  
+  .features ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .features li {
+    margin: 5px 0;
+  }
+  
+  .actions {
+    margin: 20px 0;
+  }
+
+  .action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas com largura igual */
+    gap: 10px; /* Espaçamento entre os botões */
+    justify-items: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
+  }
+  
+  .action-buttons button {
+    padding: 20px; /* Define o padding interno dos botões */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Tamanho da fonte */
+    width: 100%; /* Garante que os botões ocupem toda a largura da célula do grid */
+    height: 100px; /* Define uma altura fixa para todos os botões */
+    box-sizing: border-box; /* Garante que o padding e borda não afetem as dimensões */
+  }
+  
+  
+  .action-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .home-footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+

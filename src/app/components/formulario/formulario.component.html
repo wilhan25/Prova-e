@@ -1,0 +1,33 @@
+<div class="form-container">
+    <h2>Adicionar Nova Questão</h2>
+    <form (ngSubmit)="adicionarQuestao()">
+      <!-- Campo de Categoria (Select) -->
+      <div class="form-group">
+        <label for="categoria">Categoria</label>
+        <select id="categoria" [(ngModel)]="novaQuestao.categoria" name="categoria" required>
+          <option value="" disabled selected>Escolha a Categoria</option>
+          <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+        </select>
+      </div>
+  
+      <!-- Campo de Pergunta (Texto com 4 linhas) -->
+      <div class="form-group">
+        <label for="textoDaQuestao">Texto da Pergunta</label>
+        <textarea id="textoDaQuestao" [(ngModel)]="novaQuestao.textoDaQuestao" name="textoDaQuestao" rows="4" required></textarea>
+      </div>
+  
+      <!-- Alternativas (Radio ao lado da alternativa) -->
+      <div class="form-group">
+        <label>Alternativas:</label>
+        <div *ngFor="let letra of ['A', 'B', 'C', 'D', 'E']; let i = index" class="alternativa">
+          <input type="radio" id="alternativa{{letra}}" [(ngModel)]="novaQuestao.respostaCorreta" name="respostaCorreta" [value]="letra">
+          <label for="alternativa{{letra}}">{{ letra }}.</label>
+          <input type="text" [(ngModel)]="novaQuestao.alternativas[i]" name="alternativa{{letra}}" required>
+        </div>
+      </div>
+  
+      <!-- Botão de Enviar -->
+      <button type="submit">Adicionar Questão</button>
+    </form>
+  </div>
+  

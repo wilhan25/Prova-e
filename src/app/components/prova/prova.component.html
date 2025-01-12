@@ -1,0 +1,34 @@
+<div class="container">
+  <label for="categoria-select">Selecione uma categoria</label>
+  <select id="categoria-select" [(ngModel)]="categoriaSelecionada" (change)="onCategoriaChange()">
+    <option *ngFor="let categoria of categorias" [value]="categoria">
+      {{ categoria }}
+    </option>
+  </select>
+
+  <label for="numero-questoes">Número de questões</label>
+  <input id="numero-questoes" type="number" [(ngModel)]="numeroQuestoes" (change)="onCategoriaChange()" min="1" max="10">
+
+  <div *ngIf="questions.length > 0">
+    <div *ngFor="let question of questions; let i = index" class="question-card">
+      <label id="example-radio-group-label">Questão {{ i + 1 }}: {{ question.textoDaQuestao }}</label>
+
+      <div class="example-radio-group">
+        <div *ngFor="let alternativa of question.alternativas; let j = index" class="example-radio-button">
+          <input type="radio" [id]="'alternativa' + i + j" [name]="'question' + i" [value]="alternativa" [(ngModel)]="question.alternativaEscolhida">
+          <label [for]="'alternativa' + i + j">{{ getAlternativaLetra(j) }}. {{ alternativa }}</label>
+        </div>
+      </div>
+
+      <div>
+        A alternativa escolhida foi:
+        <span>{{ question.alternativaEscolhida || 'Nenhuma alternativa escolhida' }}</span>
+      </div>
+
+      <!-- Mostrar a resposta correta caso a alternativa esteja errada -->
+      <div *ngIf="question.alternativaEscolhida && question.alternativaEscolhida !== question.respostaCorreta">
+        A resposta correta é: {{ question.respostaCorreta }}
+      </div>
+    </div>
+  </div>
+</div>

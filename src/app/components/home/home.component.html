@@ -1,0 +1,27 @@
+<div class="home-container">
+  <header class="home-header">
+    <h1>Bem-vindo ao Prova-e</h1>
+  </header>
+
+  <main class="home-main">
+    <section class="features">
+
+    </section>
+
+    <section class="actions">
+      <h2>O que você deseja fazer?</h2>
+      <div class="action-buttons">
+        <button [routerLink]="['/add-quest']">Criar Prova</button>
+        <button [routerLink]="['/app-banco-questao']">Acessar Banco de Questões</button>
+        <button [routerLink]="['/app-prova']">Aplicar prova</button>
+      </div>
+    </section>
+
+
+  </main>  
+
+  <footer class="home-footer">
+    <p>&copy; 2024 Meu App. Todos os direitos reservados.</p>
+  </footer>  
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,35 @@
+<div class="questoes-container">
+    <h2>Lista de Questões</h2>
+    
+    <div *ngIf="questoes.length === 0" class="no-questions">
+      <p>Não há questões salvas ainda. Adicione uma nova questão!</p>
+    </div>
+  
+    <div *ngFor="let questao of questoes" class="questao-card">
+      <div class="questao-header">
+        <span class="questao-categoria">{{ questao.categoria }}</span>
+        <span class="questao-id">ID: {{ questao.id }}</span>
+      </div>
+      
+      <div class="questao-texto">
+        <p>{{ questao.textoDaQuestao }}</p>
+      </div>
+      
+      <div class="questao-alternativas">
+        <div *ngFor="let alternativa of questao.alternativas; let i = index" class="alternativa-item">
+          <strong>{{ 'ABCDE'[i] }}.</strong> {{ alternativa }}
+        </div>
+      </div>
+      
+      <div class="questao-resposta">
+        <strong>Resposta Correta:</strong> {{ questao.respostaCorreta }}
+      </div>
+  
+      <!-- Botões de Excluir e Alterar -->
+      <div class="buttons">
+        <button (click)="alterarQuestao(questao)" class="alterar-btn" [routerLink]="['/add-quest']">Alterar</button>
+        <button (click)="excluirQuestao(questao.id)" class="excluir-btn">Excluir</button>
+      </div>
+    </div>
+  </div>
+  

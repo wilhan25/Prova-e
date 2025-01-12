@@ -1,0 +1,36 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.question-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.example-radio-group {
+  margin-top: 10px;
+}
+
+.example-radio-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.example-radio-button input[type="radio"] {
+  margin-right: 10px;
+}
+
+.question-card label {
+  font-weight: bold;
+}
+
+.question-card .correct-answer {
+  color: green;
+  font-weight: bold;
+}
