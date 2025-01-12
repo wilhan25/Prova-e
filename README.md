@@ -23,4 +23,4 @@ ProvaE é um aplicativo desenvolvido em Angular para auxiliar na aplicação de 
 Para mais informações, entre em contato com o desenvolvedor:
 
 - **Nome**: Wilhan A
-- **Email**: wilhan@example.com
+- **Email**: wilhan.amello@gmal.com
